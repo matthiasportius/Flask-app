@@ -1,3 +1,4 @@
+# run app with flask --app flaskr (--debug) run
 import os
 
 from flask import Flask
@@ -29,5 +30,8 @@ def create_app(test_config=None):
     def hello():
         return "Hello, World"
     
+    # db can now be initialized with "flask --app flaskr init-db" 
+    from . import db
+    db.init_app(app)
+
     return app
-    
