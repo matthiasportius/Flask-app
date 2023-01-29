@@ -1,4 +1,3 @@
-# https://flask.palletsprojects.com/en/2.2.x/tutorial/database/
 import sqlite3
 
 import click

@@ -30,8 +30,11 @@ def create_app(test_config=None):
     def hello():
         return "Hello, World"
     
-    # db can now be initialized with "flask --app flaskr init-db" 
+    # initialize db with "flask --app flaskr init-db" 
     from . import db
     db.init_app(app)
+
+    from . import auth
+    app.register_blueprint(auth.bp)
 
     return app
