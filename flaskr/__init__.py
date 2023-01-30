@@ -37,4 +37,13 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.bp)
 
+    from . import blog
+    app.register_blueprint(blog.bp)
+    app.add_url_rule("/", endpoint="index")
+    # associates endpoint name "index" with "/" url so thath url_for("index") works and generates "/"
+    # without this only url_for("blog.index") would work
+    # app.route("/") def index would do the same
+    # could also give blog Blueprint a url_prefix like auth and define seperate index view in the application factory (__init__)
+    # then the index in __init__ and the blog.index (with url_prefix) would be different
+    
     return app
