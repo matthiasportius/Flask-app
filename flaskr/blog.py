@@ -93,7 +93,7 @@ def update(id):
 # takes id argument (to get to URL: url_for("blog.update", id=post["id"]), is used in index.html)
 
 
-@bp.route('<int:id>/delete', methods=('POST',))
+@bp.route('/<int:id>/delete', methods=('POST',))
 @login_required
 def delete(id):
     get_post(id)

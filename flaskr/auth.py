@@ -7,10 +7,10 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from flaskr.db import get_db  # also from .db ... possible?
 
-bp = Blueprint("auth", __name__, url_prefix="/auth")
+bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 
-@bp.route("/register", methods=("GET", "POST"))
+@bp.route('/register', methods=("GET", "POST"))
 def register():
     if request.method == "POST":
         username = request.form["username"]
@@ -33,11 +33,11 @@ def register():
             except db.IntegrityError:
                 error = f"User {username} is already registered."
             else:
-                return redirect(url_for("auth.login"))
+                return redirect(url_for('auth.login'))
         
         flash(error)
     
-    return render_template("auth/register.html")
+    return render_template('auth/register.html')
 
 
 @bp.route('/login', methods=('GET', 'POST'))
@@ -73,22 +73,22 @@ def load_logged_in_user():
     if user_id is None:
         g.user = None
     else:
-        g.user = get_db.execute(
-            "SELECT * FROM user WHERE is = ?", (user_id,)
+        g.user = get_db().execute(
+            "SELECT * FROM user WHERE id = ?", (user_id,)
         ).fetchone()
 
 
-@bp.route("/logout")
+@bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for("index"))
+    return redirect(url_for('index'))
 
 
 def login_required(view):
     @functools.wraps(view)  # makes that name of view function stays view and is not "wrapped view" now, also copies docstring etc. of original view function
     def wrapped_view(**kwargs):
         if g.user is None:
-            return redirect(url_for("auth.login"))
+            return redirect(url_for('auth.login'))
         
         return view(**kwargs)
     
