@@ -5,11 +5,19 @@
 {% endblock %}
 
 {% block content %}
-  <form method="post">
+  <form class="register" method="post">
     <label for="username">Username</label>
-    <input name="username" id="username" required>
+    <input name="username" id="username" autofocus maxlength="20" required>
+    <span></span>
+    <!-- <label for="mail">Email Adress</label>
+    <input type="email" name="mail" id="mail" required> 
+    integrate that into db + view -->
     <label for="password">Password</label>
     <input type="password" name="password" id="password" required>
+    <!-- add attributes: pattern="[a-z]+" min="8" 
+    add backend password length/value check? -->
+    <span></span>
+    <!-- add a repeat password field -->
     <input type="submit" value="Register">
   </form>
 {% endblock %}

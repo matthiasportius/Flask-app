@@ -1,24 +1,61 @@
 <!DOCTYPE html>
-<title>{% block title %}{% endblock %} - Flaskr</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<nav>
-  <h1>Flaskr</h1>
-  <ul>
-    {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
-    {% else %}
-      <li><a href="{{ url_for('auth.register') }}">Register</a>
-      <li><a href="{{ url_for('auth.login') }}">Log In</a>
-    {% endif %}
-  </ul>
-</nav>
-<section class="content">
-  <header>
-    {% block header %}{% endblock %}
-  </header>
-  {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
-  {% block content %}{% endblock %}
-</section>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="A Showcase website - My first Flask webpage">
+    <meta name="author" content="Matthias Portius">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for ('static', filename='favicon.ico') }}" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/9c9362fd64.js" crossorigin="anonymous"></script>
+    {% block head %}
+    <script src="{{ url_for ('static', filename='script.js' ) }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% endblock %}
+    <title>{% block title %}{% endblock %} - Flaskr</title>
+  </head>
+  <body>
+    <div class="top-header">
+      <h1>Flask</h1>
+    </div>
+    <!-- add responsive nav for mobile version: -->
+    <!-- <a href="#" class="icon" onclick="functionnav()"><i class="fa fa-bars"></i></a> -->
+    <nav>
+      {% block nav %}
+      <a href="{{ url_for('index') }}" class="{{ 'active' if request.path == url_for('index') }}">HOME</a>
+      <a href="{{ url_for('hello') }}">HELLO</a>
+      <!-- add contact, about me, misc, ... -->
+      {% endblock %}
+      {% if g.user %}
+      <span>{{ g.user['username'] }}</span>
+      <a href="{{ url_for('auth.logout') }}">Log Out</a>
+      {% else %}
+      <a href="{{ url_for('auth.register') }}">Register</a>
+      <a href="{{ url_for('auth.login') }}">Log In</a>
+      {% endif %}
+    </nav>
+    <section class="content">
+      <header>
+        {% block header %}{% endblock %}
+      </header>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+    </section>
+    <footer>
+      {% block footer %}
+      <address>
+          This Website was made as a showcase by Matthias Portius.<br>
+          Get in touch:<br>
+          <a href="mailto:Matthias.Portius@gmx.de" title="Matthias.Portius@gmx.de"><i class="fas fa-envelope fa-fw"></i></a>
+          <a href="https://www.linkedin.com/in/matthias-portius-61a3181a8" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+          <a href="https://github.com/matthiasportius" target="_blank"><i class="fab fa-github fa-fw"></i></a>  <!-- maybe margin-right instead fa-fw -->
+      </address>            
+      {% endblock %}
+  </footer>
+  </body>
+</html>
+
+<!-- <i class="far fa-calendar-alt"></i> für datum eines posts
+<i class="far fa-clock"></i> falls irgendwann genaue Zeit 
+<i class="fas fa-flask"></i> für chemie bezug -->
