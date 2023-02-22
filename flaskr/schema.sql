@@ -1,4 +1,4 @@
--- look these up again and write in Python Notes
+-- look these up again and write in Notes
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS post;
 

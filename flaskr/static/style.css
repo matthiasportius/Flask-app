@@ -112,14 +112,14 @@ input[type=submit] {
     color: green;
 }
 
-
-/* contact CSS
 textarea {
     resize: none;
-}  */
+    min-height: 10rem;
+    min-width: 20rem;
+} 
 
 
-/* INDEX ACCORDION */
+/* index ACCORDION */
 .flex-container {
     display: flex;
     flex-direction: row;
@@ -176,10 +176,9 @@ hr { border: none; border-top: 1px solid lightgray; }
 .post .about { color: slategray; font-style: italic; }
 .post .body { white-space: pre-line; }
 .content:last-child { margin-bottom: 0; }
-.content textarea { min-height: 12em; resize: vertical; }
 input.danger { color: #cc2f2e; }
 
-/* rework this (from old project) */
+/* rework this (from old project) for responsiveness (flex layout) */
 /* nav a.icon {
     display: none;
 } */

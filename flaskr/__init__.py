@@ -26,11 +26,6 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-
-    # a simple page that says hello
-    @app.route("/hello")
-    def hello():
-        return "Hello, World!"
     
     # initialize db with "flask --app flaskr init-db" 
     from . import db
@@ -63,3 +58,4 @@ def create_app(test_config=None):
 # Upload an image to go along with a post.
 # Format posts using Markdown.
 # An RSS feed of new posts.
+# an about me
