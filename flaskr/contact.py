@@ -62,4 +62,4 @@ def contact():
         except FileExistsError:
             save_message(files, path, name, mail, message, "a")
 
-    return render_template("new_test/contact.html")
+    return render_template("contact.html")

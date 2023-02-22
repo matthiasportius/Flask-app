@@ -22,7 +22,7 @@
     <nav>
       <a href="{{ url_for('index') }}" class="{{ 'active' if request.path == url_for('index') }}">HOME</a>
       <a href="{{ url_for('hello') }}">HELLO</a> <!-- change hello html or delete this link -->
-      <a href="{{ url_for('contact.contact') }}" class="{{ 'active' if request.path == url_for('contact.contact') }}">CONTACT</a>
+      <a href="{{ url_for('contact') }}" class="{{ 'active' if request.path == url_for('contact.contact') }}">CONTACT</a>
       <!-- add about me, misc, ... -->
       {% if g.user %}
       <span>{{ g.user['username'] }}</span>

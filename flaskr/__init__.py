@@ -50,6 +50,7 @@ def create_app(test_config=None):
     
     from . import contact
     app.register_blueprint(contact.bp)
+    app.add_url_rule("/contact", endpoint="contact")
 
     return app
 
