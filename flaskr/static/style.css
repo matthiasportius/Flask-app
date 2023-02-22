@@ -178,3 +178,135 @@ hr { border: none; border-top: 1px solid lightgray; }
 .content:last-child { margin-bottom: 0; }
 .content textarea { min-height: 12em; resize: vertical; }
 input.danger { color: #cc2f2e; }
+
+/* rework this (from old project) */
+/* nav a.icon {
+    display: none;
+} */
+
+/* on mobile hide all nav-links except "Home" and add a nav icon with a dropdown */
+/* when nav-icon clicked: nav-links become visible again as a vertically aligned navbar */
+/* @media screen and (max-width: 768px) {
+    nav a:not(:first-child) {
+        display: none;
+    }
+
+    nav a.icon {
+        float: right;
+        display: block;
+    }
+
+    nav.responsive {
+        position: relative;
+    }
+    nav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 1rem auto;
+    justify-content: center;
+}
+
+.aside {
+   flex: 30%;
+   background-color: #1e3249;
+   padding: 1rem 1.5rem;
+   margin-right: 1rem;
+   box-shadow: -1px 2px 10px black;
+}
+
+.aside p {
+    font-size: 13px;
+    color: #eee;
+}
+
+i.margin-right {
+    margin-right: 1rem;
+}
+
+hr {
+    border: none;
+    background-color: #ccc;
+    height: 1px;
+}
+
+.main {
+    flex: 70%;
+}
+
+.main h2 {
+    margin: 0;
+}
+
+.main div {
+    padding: 1rem;
+    background-color: #1a2633;
+    box-shadow: -1px 2px 10px black;
+}
+
+.work-experience {
+    margin-bottom: 1rem;
+}
+
+.main p {
+    font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .aside {
+        padding-top: 2rem;
+        margin: 0;
+        box-shadow: none;
+    }
+    
+    .main {
+        padding-bottom: 2rem;
+    }
+
+    .main div {
+        box-shadow: none;
+    }
+
+    .work-experience {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .flex-container {
+        width: 600px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .flex-container {
+        width: 800px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .flex-container {
+        width: 1100px;
+    }
+} */

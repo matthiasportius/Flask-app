@@ -8,8 +8,10 @@ def create_app(test_config=None):
     # create and configure app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY="dev",  # only during developement, config.py can change that to real secret value
-        DATABASE=os.path.join(app.instance_path, "flaskr.sqlite")
+        SECRET_KEY="dev",  # only during developement, config.py can change that to real secret value (like secrets.token_hex())
+        DATABASE=os.path.join(app.instance_path, "flaskr.sqlite"),
+        UPLOAD_FOLDER=os.path.join(app.instance_path, "uploads"),
+        ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
     )
 
     if test_config is None:
@@ -46,6 +48,9 @@ def create_app(test_config=None):
     # could also give blog Blueprint a url_prefix like auth and define seperate index view in the application factory (__init__)
     # then the index in __init__ and the blog.index (with url_prefix) would be different
     
+    from . import contact
+    app.register_blueprint(contact.bp)
+
     return app
 
 # TODO: 
