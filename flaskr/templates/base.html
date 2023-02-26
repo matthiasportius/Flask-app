@@ -17,12 +17,13 @@
     <div class="top-header">
       <h1>Flask</h1>
     </div>
-    <!-- add responsive nav for mobile version: -->
-    <!-- <a href="#" class="icon" onclick="functionnav()"><i class="fa fa-bars"></i></a> -->
-    <nav>
+    <nav id="nav">
       <a href="{{ url_for('index') }}" class="{{ 'active' if request.path == url_for('index') }}">HOME</a>
       <a href="{{ url_for('contact') }}" class="{{ 'active' if request.path == url_for('contact.contact') }}">CONTACT</a>
       <!-- add about me, misc, ... -->
+      <!-- responsive nav for mobile version: -->
+      <a href="#" class="icon" onclick="functionnav()"><i class="fa fa-bars"></i></a>
+
       {% if g.user %}
       <span>{{ g.user['username'] }}</span>
       <a href="{{ url_for('auth.logout') }}">Log Out</a>
@@ -45,10 +46,10 @@
       {% block footer %}
       <address>
           This Website was made as a showcase by Matthias Portius.<br>
-          Get in touch:<br>
+          Get in touch: 
           <a href="mailto:Matthias.Portius@gmx.de" title="Matthias.Portius@gmx.de"><i class="fas fa-envelope fa-fw"></i></a>
           <a href="https://www.linkedin.com/in/matthias-portius-61a3181a8" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
-          <a href="https://github.com/matthiasportius" target="_blank"><i class="fab fa-github fa-fw"></i></a>  <!-- maybe margin-right instead fa-fw -->
+          <a href="https://github.com/matthiasportius" target="_blank"><i class="fab fa-github fa-fw"></i></a>
       </address>            
       {% endblock %}
   </footer>

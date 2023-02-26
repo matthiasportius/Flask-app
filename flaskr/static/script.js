@@ -1,13 +1,12 @@
-// add later for responsive nav on mobile with symbol after
-// function functionnav() {
-//     var x = document.getElementById("IDnav");
-//     if (x.className === "responsive") {
-//         x.className = "";
-//     }
-//     else {
-//         x.className="responsive";
-//     } 
-// }
+function functionnav() {
+    var x = document.getElementById("nav");
+    if (x.className === "responsive") {
+        x.className = "";
+    }
+    else {
+        x.className="responsive";
+    } 
+}
 
 var acc = document.getElementsByClassName("accordion");
 var i;

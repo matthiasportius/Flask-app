@@ -8,6 +8,36 @@
 {% endblock %}
 
 {% block content %}
+  <!-- MAIN CONTENT -->
+  <div class="flex-container">
+    <div class="main">
+      <h2>Lorem</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate tempora 
+        dolore delectus magni sed mollitia nihil magnam. Porro libero ut minus ullam, 
+        earum hic, quod possimus, repudiandae voluptatem dolor nostrum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate tempora 
+        dolore delectus magni sed mollitia nihil magnam. Porro libero ut minus ullam, 
+        earum hic, quod possimus, repudiandae voluptatem dolor nostrum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate tempora 
+        dolore delectus magni sed mollitia nihil magnam. Porro libero ut minus ullam, 
+        earum hic, quod possimus, repudiandae voluptatem dolor nostrum.
+      </p>
+    </div>
+    <div class="aside">
+      <h2>Lorem</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate tempora 
+        dolore delectus magni sed mollitia nihil magnam. Porro libero ut minus ullam, 
+        earum hic, quod possimus, repudiandae voluptatem dolor nostrum.
+      </p>
+    </div>
+  </div>
+
   <!-- BLOG POSTS -->
   {% for post in posts %}
     <article class="post">
@@ -28,7 +58,7 @@
   {% endfor %}
 
   <!-- ACCORDION -->
-  <div class="flex-container">
+  <div class="flex-container flexaccordion">
     <div>
         <button class="accordion">Section 1</button>
         <div class="panel">
@@ -36,11 +66,17 @@
         </div>
         <button class="accordion">Section 2</button>
         <div class="panel">
-            <p>Lorem ipsum...</p>
+            <p>
+              ...dolor sit, amet consectetur adipisicing elit. Obcaecati, perspiciatis, 
+              natus totam ipsa saepe, delectus rem laboriosam dolores..
+            </p>
         </div>
         <button class="accordion">Section 3</button>
         <div class="panel">
-            <p>Lorem ipsum...</p>
+            <p>...debitis quia voluptas impedit voluptates quam perferendis eveniet 
+              rerum deserunt est corrupti cumque nesciunt unde fugiat, sapiente 
+              expedita quibusdam eos quod?
+            </p>
         </div>
     </div>
 </div>

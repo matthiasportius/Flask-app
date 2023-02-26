@@ -4,7 +4,6 @@ html {
     font-family: Verdana, Tahoma, sans-serif;
     line-height: 1.6;
     background: #eee; 
-    padding: 1rem; 
 }
 
 *, *::before, *::after {
@@ -12,7 +11,7 @@ html {
 }
 
 body { 
-    max-width: 960px;  /* CHANGE to flex */
+    max-width: 1200px;
     margin: 0 auto; 
     background: white;
 }
@@ -42,7 +41,7 @@ nav {
     position: -webkit-sticky;
     position: sticky;
     box-shadow: 0px 5px 10px -5px black;
-    /* top: 0; ??? */
+    top: 0;
 }
 
 nav a {
@@ -59,6 +58,90 @@ nav a.active {
 
 nav a:hover:not(a.active) {
     background-color: grey;
+}
+
+ /* responsive nav  */
+ nav a.icon {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    nav a:not(:first-child) {
+        display: none;
+    }
+
+    nav a.icon {
+        float: right;
+        display: block;
+    }
+
+    nav.responsive {
+        position: relative;
+    }
+    nav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+.content { 
+    padding: 0 1rem 1rem; 
+}
+
+.content > header { 
+    border-bottom: 1px solid lightgray; 
+    display: flex; 
+    align-items: flex-end; 
+    margin-bottom: 1rem;
+}
+
+.content > header h1 { 
+    flex: auto; 
+    margin: 1rem 0 0.25rem 0; 
+}
+
+.flash { 
+    margin: 1em 0; 
+    padding: 1em; 
+    background: #cae6f6; 
+    border: 1px solid #377ba8; 
+}
+
+.post > header { display: flex; 
+    align-items: flex-end; 
+    font-size: 0.85em; 
+}
+
+.post > header > div:first-of-type { 
+    flex: auto; 
+}
+
+.post > header h1 { 
+    font-size: 1.5em; 
+    margin-bottom: 0; 
+}
+
+.post .about { 
+    color: slategray; 
+    font-style: italic; 
+}
+
+.post .body { 
+    white-space: pre-line; 
+}
+
+.content:last-child { 
+    margin-bottom: 0; 
+}
+
+input.danger { 
+    color: #cc2f2e; 
 }
 
 footer {
@@ -119,13 +202,19 @@ textarea {
 } 
 
 
-/* index ACCORDION */
+/* ---------- index ---------- */
+
 .flex-container {
     display: flex;
     flex-direction: row;
     padding: 0;
     margin: 1rem auto;
     justify-content: center;
+}
+
+/* ACCORDION */
+.flexaccordion {
+    max-width: 50%;
 }
 
 .accordion {
@@ -155,117 +244,35 @@ textarea {
 
 .accordion:after {
     content: "\002B";
-    margin-left: 1rem;
+    float: right;
 }
 
 button.active:after {
     content: "\2212"
 }
 
-
-
-
-hr { border: none; border-top: 1px solid lightgray; }
-.content { padding: 0 1rem 1rem; }
-.content > header { border-bottom: 1px solid lightgray; display: flex; align-items: flex-end; }
-.content > header h1 { flex: auto; margin: 1rem 0 0.25rem 0; }
-.flash { margin: 1em 0; padding: 1em; background: #cae6f6; border: 1px solid #377ba8; }
-.post > header { display: flex; align-items: flex-end; font-size: 0.85em; }
-.post > header > div:first-of-type { flex: auto; }
-.post > header h1 { font-size: 1.5em; margin-bottom: 0; }
-.post .about { color: slategray; font-style: italic; }
-.post .body { white-space: pre-line; }
-.content:last-child { margin-bottom: 0; }
-input.danger { color: #cc2f2e; }
-
-/* rework this (from old project) for responsiveness (flex layout) */
-/* nav a.icon {
-    display: none;
-} */
-
-/* on mobile hide all nav-links except "Home" and add a nav icon with a dropdown */
-/* when nav-icon clicked: nav-links become visible again as a vertically aligned navbar */
-/* @media screen and (max-width: 768px) {
-    nav a:not(:first-child) {
-        display: none;
-    }
-
-    nav a.icon {
-        float: right;
-        display: block;
-    }
-
-    nav.responsive {
-        position: relative;
-    }
-    nav.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    nav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-}
-
-h1 {
-    font-size: 3rem;
-}
-
-
-.flex-container {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 1rem auto;
-    justify-content: center;
-}
-
-.aside {
-   flex: 30%;
-   background-color: #1e3249;
-   padding: 1rem 1.5rem;
-   margin-right: 1rem;
-   box-shadow: -1px 2px 10px black;
-}
-
-.aside p {
-    font-size: 13px;
-    color: #eee;
-}
-
-i.margin-right {
-    margin-right: 1rem;
-}
-
 hr {
     border: none;
-    background-color: #ccc;
+    background-color: lightgrey;
     height: 1px;
+    /* also possible with: border:none; border-top: 1px solid lightgray; */
 }
 
+/* Flexboxes */
 .main {
     flex: 70%;
-}
-
-.main h2 {
-    margin: 0;
-}
-
-.main div {
-    padding: 1rem;
-    background-color: #1a2633;
+    padding: 0 1.5rem;
+    background-color: lightgray;
     box-shadow: -1px 2px 10px black;
 }
 
-.work-experience {
-    margin-bottom: 1rem;
-}
-
-.main p {
-    font-size: 12px;
-}
+.aside {
+    flex: 30%;
+    background-color: lightgrey;
+    padding: 0 1.5rem;
+    margin-left: 1rem;
+    box-shadow: -1px 2px 10px black;
+ }
 
 @media screen and (max-width: 768px) {
     .flex-container {
@@ -275,7 +282,7 @@ hr {
 
     .aside {
         padding-top: 2rem;
-        margin: 0;
+        margin: 1rem 0;
         box-shadow: none;
     }
     
@@ -283,7 +290,7 @@ hr {
         padding-bottom: 2rem;
     }
 
-    .main div {
+    .main{
         box-shadow: none;
     }
 
@@ -308,4 +315,4 @@ hr {
     .flex-container {
         width: 1100px;
     }
-} */
+}
