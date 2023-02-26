@@ -22,3 +22,7 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }
+
+// checkValidity()
+// reportValidity()
+// properties like tooShort specify what went wrong

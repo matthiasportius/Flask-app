@@ -14,9 +14,12 @@
     <input type="email" name="mail" id="mail" required> 
     integrate that into db + view -->
     <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-    <!-- add attributes: pattern="[a-z]+" min="8" 
-    add backend password length/value check? -->
+    <input type="password" name="password" id="password" minlength="8" 
+    pattern="[a-zA-Z-9?!#]+" title="Allowed: letters, numbers or '?!#'" 
+    required>
+    <!-- add attributes: pattern="[a-z]+" 
+    add backend password length/value check?
+    add descroptory text under password form what characters are allowed -->
     <span></span>
     <!-- add a repeat password field -->
     <input type="submit" value="Register">

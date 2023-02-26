@@ -178,11 +178,11 @@ input[type=submit] {
 }
 
 .register input:valid:not(input[type=submit]) {
-    border: 2px solid green;
+    box-shadow: 0 0 5px 1px green;
 }
 
 .register input:invalid:not(input[type=submit]) {
-    border: 2px solid red;
+    box-shadow: 0 0 5px 1px red;
 }
 
 .register input:invalid + span::before {
