@@ -197,23 +197,26 @@ input[type=submit] {
 
 /* .register .empty {
     box-shadow: none;
-}
+} */
 
 .register-error {
-    width: 100%;
+    width: 149px;
     padding: 0;
-  
+    display: block;
     font-size: 80%;
     color: white;
     background-color: #900;
     border-radius: 0 0 5px 5px;
   
-    box-sizing: border-box;
-  }
+}
   
   .register-error.active {
     padding: 0.3em;
-  } */
+  }
+
+  .register input[type="password"] {
+    margin-bottom: 0;
+  }
 
 /* --------- contact --------- */
 
