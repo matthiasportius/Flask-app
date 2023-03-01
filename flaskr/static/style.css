@@ -60,7 +60,7 @@ nav a:hover:not(a.active) {
     background-color: grey;
 }
 
- /* responsive nav  */
+/* responsive nav  */
  nav a.icon {
     display: none;
 }
@@ -169,12 +169,16 @@ address {
 
 .content input {
     outline: none;
-    margin-bottom: 1rem;
+}
+
+label {
+    margin-top: 1rem;
 }
 
 input[type=submit] { 
     display: block;
-    min-width: 5rem; 
+    min-width: 5rem;
+    margin-top: 1rem;
 }
 
 .register input:valid:not(input[type=submit]) {
@@ -195,9 +199,13 @@ input[type=submit] {
     color: green;
 }
 
-/* .register .empty {
-    box-shadow: none;
-} */
+.register input.empty {
+    box-shadow: none !important;
+}
+
+.register input.empty + span:before {
+    content: "";
+}
 
 .register-error {
     width: 149px;
