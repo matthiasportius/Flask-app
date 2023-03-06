@@ -14,5 +14,11 @@ A client-side form validation for my register form using HTML, CSS and JavaScrip
 A new blueprint and .html page for contacting, including the option to upload files. 
 For this I looked into [Flask's pattern for file uploads](https://flask.palletsprojects.com/en/2.2.x/patterns/fileuploads/).  
 I also added some elements to my index page while looking into the specifics of Flex-Boxes and Responsive Web Design and made some minor changes to the SQL database,
-the config settings of my app and some page's HTML and CSS.
+the config settings of my app and some page's HTML and CSS, added a favicon, etc.
+
+
+## Further plans
+
+In the future I plan on adding some elements to my web app like an about me and misc page.
+Adding a `maxlength="200"` property to the textarea of my contact page together with a character count feedback.
 
