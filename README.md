@@ -8,7 +8,7 @@ CSS and Java along the way. I chose the Flask web framework as I have some exper
 
 This project was mainly created following the [Flask Tutorial](https://flask.palletsprojects.com/en/2.2.x/tutorial/), as this was an easy way for me to learn
 the basics of Flask. I then added some of my own while learning more about HTML, CSS and JavaScipt with the 
-[MDN Web Docs] (https://developer.mozilla.org/en-US/docs/Learn).
+[MDN Web Docs] (https://developer.mozilla.org/en-US/docs/Learn).  
 Things I added are:  
 A client-side form validation for my register form using HTML, CSS and JavaScript. I also implemented further validity checks on the backend in my `auth.py` blueprint.  
 A new blueprint and .html page for contacting, including the option to upload files. 
