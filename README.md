@@ -24,7 +24,7 @@ the config settings of my app and some page's HTML and CSS, added a favicon, etc
 
 ## Usage
 
-Project installable with `pip install -e`.
+Project installable with `pip install -e`.  
 Initialize database with `flask --app flaskr init-db`.  
 Run app with `flask --app flaskr (--debug) run`.
 
