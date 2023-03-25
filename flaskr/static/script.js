@@ -1,3 +1,4 @@
+// BASE
 function functionnav() {
     const x = document.getElementById("nav");
     if (x.className === "responsive") {
@@ -9,6 +10,7 @@ function functionnav() {
 }
 
 
+// INDEX
 const acc = document.getElementsByClassName("accordion");
 let i;
 
@@ -25,6 +27,7 @@ for (i = 0; i < acc.length; i++) {
 }
 
 
+// REGISTER
 const username = document.getElementById("username");
 const mail = document.getElementById("mail");
 const rpassword = document.getElementById("rpassword");

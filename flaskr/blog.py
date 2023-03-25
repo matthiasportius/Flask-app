@@ -14,10 +14,11 @@ def index():
     db = get_db()
     posts = db.execute(
         'SELECT p.id, title, body, created, author_id, username'
-        ' FROM post p JOIN user u ON p.author_id = u.id'  # Aliases: post p same as post AS p
+        ' FROM post p JOIN user u ON p.author_id = u.id'
         ' ORDER BY created DESC'
     ).fetchall()
     return render_template('blog/index.html', posts=posts)
+# Note on SQL Aliases: "post p" same as "post AS p"
 
 
 @bp.route('/create', methods=('GET', 'POST'))
@@ -61,7 +62,8 @@ def get_post(id, check_author=True):
         abort(403)
 
     return post
-# check_author=False to get a post without checking the author (e.g. to get and show an individual post with a certain id)
+# check_author=False to get a post without checking the author 
+# (e.g. to get and show an individual post with a certain id)
 
 
 @bp.route('/<int:id>/update', methods=('GET', 'POST'))
@@ -90,7 +92,8 @@ def update(id):
             return redirect(url_for('blog.index'))
 
     return render_template('blog/update.html', post=post)
-# takes id argument (to get to URL: url_for("blog.update", id=post["id"]), is used in index.html)
+# takes id argument 
+# to get to URL: url_for("blog.update", id=post["id"]), is used in index.html
 
 
 @bp.route('/<int:id>/delete', methods=('POST',))

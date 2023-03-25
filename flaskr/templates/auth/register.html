@@ -1,8 +1,11 @@
-<!-- dont show X + red when input not focused, add email and pw repeat -->
 {% extends 'base.html' %}
 
+<!-- 
+  useful pattern, sets title block and then outputs its value 
+  into header block 
+-->
 {% block header %}
-  <h1>{% block title %}Register{% endblock %}</h1> <!-- useful pattern, sets title block and then outputs its value into header block -->
+  <h1>{% block title %}Register{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
