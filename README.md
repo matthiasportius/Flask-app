@@ -18,14 +18,9 @@ the config settings of my app and some page's HTML and CSS, added a favicon, etc
 
 ### Example images
 
-| ![Index Page](/Flask_Index.JPG) | ![Register Page](/Flask_Register.JPG) | ![Contact Page](/Flask_Contact.JPG) |
-| ---- | ---- | ---- |
-
-|||
-|-|-|
-| ![Index Page](/Flask_Index.JPG) | ![Register Page](/Flask_Register.JPG)
-| ![Contact Page](/Flask_Contact.JPG) |
-
+![Index Page](/Flask_Index.JPG)
+![Register Page](/Flask_Register.JPG)
+![Contact Page](/Flask_Contact.JPG)
 
 ## Usage
 
